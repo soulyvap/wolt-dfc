@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/wolt-dfc/static/css/main.e3e98666.css",
+    "main.css": "/wolt-dfc/static/css/main.4bc137bd.css",
     "main.js": "/wolt-dfc/static/js/main.971dd4e7.js",
     "static/js/787.cc15c7db.chunk.js": "/wolt-dfc/static/js/787.cc15c7db.chunk.js",
     "static/media/background.jpeg": "/wolt-dfc/static/media/background.9b6024f7fca2a0448bff.jpeg",
     "index.html": "/wolt-dfc/index.html",
-    "main.e3e98666.css.map": "/wolt-dfc/static/css/main.e3e98666.css.map",
+    "main.4bc137bd.css.map": "/wolt-dfc/static/css/main.4bc137bd.css.map",
     "main.971dd4e7.js.map": "/wolt-dfc/static/js/main.971dd4e7.js.map",
     "787.cc15c7db.chunk.js.map": "/wolt-dfc/static/js/787.cc15c7db.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e3e98666.css",
+    "static/css/main.4bc137bd.css",
     "static/js/main.971dd4e7.js"
   ]
 }
