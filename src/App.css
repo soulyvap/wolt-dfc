@@ -1,38 +1,150 @@
-.App {
-  text-align: center;
+html, body, #root {
+  width: 100vw;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#root {
+  display: flex;
+  flex-direction: column;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+img {
+  width: 100vw;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin: auto;
+}
+
+.container p {
+  height: 20px;
+  margin-top: 0;
+  margin-bottom: 1vh;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  height: 70%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 90px;
+}
+
+.row label {
+  width: max(70px, 15vw);
+  font-weight: 500;
+  color: #5f5f5f
+}
+
+.row input {
+  width: 200px;
+  height: 50px;
+  margin-left: 10px;
+  border-radius: 10px;
+  border: solid 1px #d2d2d2;
+  text-align: center;
+  font-size: 16px; 
+}
+
+.row input[type="datetime-local"] {
+  font-size: 15px;
+}
+
+.row input:focus, .row input:hover {
+  border: solid 3px #0479D3;
+  outline: none;
+}
+
+.row p {
+  margin-left: 10px;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+.submitBtn {
+  background-color: #4aacda;
   color: white;
+  border: none;
+  border-radius: 5px;
+  height: 40px;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  box-shadow: 0 3px 3px rgb(0 0 0 / 0.1);
+  align-self: center;
 }
 
-.App-link {
-  color: #61dafb;
+.submitBtn:hover {
+  box-shadow: none;
+  opacity: 0.9;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+h1 {
+  font-family: 'Dongle', sans-serif;
+  font-size: 42px;
+}
+
+@media (min-aspect-ratio: 9/12) {
+
+  body {
+    background-image: url("./assets/background.jpeg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    background-repeat: no-repeat;
   }
-  to {
-    transform: rotate(360deg);
+
+  img {
+    display: none;
   }
+
+  .container {
+    width: min(100vw, 600px);
+    height: max(70vh, 600px);
+    border-radius: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    background-color: white;
+    bottom: auto;
+  }
+
+  .row label {
+    width: 30%;
+  }
+
+  .row input {
+    margin-left: 15%;
+    font-size: 14px;
+  }
+
+  form {
+    width: 70%;
+    height: 70%;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  .submitBtn {
+    width: 60%;
+    height: 50px;
+  }
+  
 }
