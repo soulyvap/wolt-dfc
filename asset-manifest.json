@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/wolt-dfc/static/css/main.115e7cc0.css",
+    "main.css": "/wolt-dfc/static/css/main.38fe8e0b.css",
     "main.js": "/wolt-dfc/static/js/main.dc705bf5.js",
     "static/js/787.cc15c7db.chunk.js": "/wolt-dfc/static/js/787.cc15c7db.chunk.js",
     "static/media/background-mobile.jpg": "/wolt-dfc/static/media/background-mobile.74856c681830fe2d7dd2.jpg",
     "static/media/background.jpeg": "/wolt-dfc/static/media/background.9b6024f7fca2a0448bff.jpeg",
     "index.html": "/wolt-dfc/index.html",
-    "main.115e7cc0.css.map": "/wolt-dfc/static/css/main.115e7cc0.css.map",
+    "main.38fe8e0b.css.map": "/wolt-dfc/static/css/main.38fe8e0b.css.map",
     "main.dc705bf5.js.map": "/wolt-dfc/static/js/main.dc705bf5.js.map",
     "787.cc15c7db.chunk.js.map": "/wolt-dfc/static/js/787.cc15c7db.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.115e7cc0.css",
+    "static/css/main.38fe8e0b.css",
     "static/js/main.dc705bf5.js"
   ]
 }
