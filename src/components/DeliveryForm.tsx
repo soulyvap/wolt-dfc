@@ -1,9 +1,11 @@
 import React, {FC, useState} from "react";
 
+//defining prop types for DeliveryForm
 interface Props {
-    passData: (formData: FormData) => void
+    handleData: (formData: FormData) => void
 }
 
+//defining data types for form
 interface FormData {
     cartVal: number | null
     distance: number | null
@@ -11,9 +13,11 @@ interface FormData {
     date: string | null
 }
 
+//form taking user input
 const DeliveryForm: FC<Props> = (props) => {
-    const passData = props.passData
+    const handleData = props.handleData
 
+    //state of inputs
     const [inputs, setInputs] = useState<FormData>({
         cartVal: null,
         distance: null,
@@ -21,16 +25,17 @@ const DeliveryForm: FC<Props> = (props) => {
         date: null,
     })
 
-    const handleSubmit = (event: React.SyntheticEvent) => {
-        event.preventDefault()
-        console.log(inputs)
-        passData(inputs)
-    }
-
+    //changes inputs state on user input change
     const handleChange = (event: React.SyntheticEvent) => {
         const name = (event.target as HTMLInputElement).name
         const value = (event.target as HTMLInputElement).value;
         setInputs(values => ({...values, [name]: value}))
+    }
+
+    //passes data to calculator on submit and triggers calculation
+    const handleSubmit = (event: React.SyntheticEvent) => {
+        event.preventDefault()
+        handleData(inputs)
     }
 
     return (
@@ -38,7 +43,7 @@ const DeliveryForm: FC<Props> = (props) => {
             <form onSubmit={handleSubmit}>
 
                 <div className="row">
-                    <label>Cart value</label>
+                    <label>Cart value (€)</label>
                     <input
                         type="number"
                         step={0.01}
@@ -47,11 +52,10 @@ const DeliveryForm: FC<Props> = (props) => {
                         name="cartVal"
                         value={inputs.cartVal || ''}
                         onChange={handleChange} />
-                    <p>€</p>
                 </div>
 
                 <div className="row">
-                    <label>Delivery distance</label>
+                    <label>Delivery distance (m)</label>
                     <input
                         type="number"
                         step={1}
@@ -60,7 +64,6 @@ const DeliveryForm: FC<Props> = (props) => {
                         name="distance"
                         value={inputs.distance || ''}
                         onChange={handleChange} />
-                    <p>m</p>
                 </div>
 
                 <div className="row">

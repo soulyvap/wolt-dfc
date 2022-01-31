@@ -1,15 +1,20 @@
-html, body, #root {
-  width: 100vw;
-  height: 100vh;
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
 }
 
 #root {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 img {
-  width: 100vw;
+  width: 100%;
+  max-height: 20vh;
+  object-fit: cover;
 }
 
 .container {
@@ -19,12 +24,28 @@ img {
   align-items: center;
   justify-content: center;
   margin: auto;
+  padding-bottom: 5rem;
 }
 
-.container p {
-  height: 20px;
-  margin-top: 0;
-  margin-bottom: 1vh;
+.priceRow {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 3rem;
+}
+
+.deliveryPrice {
+  font-weight: bold;
+  margin: 0;
+}
+
+.price {
+  font-family: "Dongle", sans-serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin: 0;
 }
 
 form {
@@ -43,26 +64,29 @@ form {
 .row label {
   width: max(70px, 15vw);
   font-weight: 500;
-  color: #5f5f5f
+  color: #5f5f5f;
+  flex: 1;
+  font-size: 0.9rem;
 }
 
 .row input {
-  width: 200px;
-  height: 50px;
   margin-left: 10px;
-  border-radius: 10px;
+  border-radius: 8px;
   border: solid 1px #d2d2d2;
   text-align: center;
-  font-size: 16px; 
+  font-size: 0.8rem;
+  padding-top: 1rem;
+  padding-right: 0.8rem;
+  padding-bottom: 1rem;
+  padding-left: 0.8rem;
+  flex: 2;
 }
 
-.row input[type="datetime-local"] {
-  font-size: 15px;
-}
-
-.row input:focus, .row input:hover {
-  border: solid 3px #0479D3;
+.row input:focus,
+.row input:hover {
+  border: solid 1px #0479d3;
   outline: none;
+  box-shadow: 0 3px 3px rgb(0 0 0 / 0.1);
 }
 
 .row p {
@@ -77,12 +101,13 @@ form {
   background-color: #4aacda;
   color: white;
   border: none;
-  border-radius: 5px;
-  height: 40px;
+  border-radius: 8px;
+  min-height: 3rem;
   width: 100%;
   margin-top: 20px;
   margin-bottom: 20px;
-  font-size: 18px;
+  font-size: 0.8rem;
+  font-weight: 700;
   box-shadow: 0 3px 3px rgb(0 0 0 / 0.1);
   align-self: center;
 }
@@ -93,12 +118,19 @@ form {
 }
 
 h1 {
-  font-family: 'Dongle', sans-serif;
-  font-size: 42px;
+  font-family: "Dongle", sans-serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #202125;
+  align-self: flex-start;
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
 }
 
-@media (min-aspect-ratio: 9/12) {
-
+@media only screen and (min-width: 768px) {
   body {
     background-image: url("./assets/background.jpeg");
     background-size: cover;
@@ -112,8 +144,6 @@ h1 {
   }
 
   .container {
-    width: min(100vw, 600px);
-    height: max(70vh, 600px);
     border-radius: 20px;
     position: absolute;
     left: 50%;
@@ -122,20 +152,32 @@ h1 {
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     background-color: white;
     bottom: auto;
+    padding-left: 6rem;
+    padding-right: 6rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 
-  .row label {
-    width: 30%;
+  .row {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
   }
 
-  .row input {
-    margin-left: 15%;
-    font-size: 14px;
+  .container p {
+    margin-bottom: 0;
   }
 
   form {
-    width: 70%;
-    height: 70%;
+    margin-top: 2rem;
+  }
+
+  .row label {
+    flex: 2.2;
+  }
+
+  .row input {
+    font-size: 14px;
   }
 
   .spacer {
@@ -143,8 +185,32 @@ h1 {
   }
 
   .submitBtn {
-    width: 60%;
-    height: 50px;
+    width: 100%;
+    min-height: 3rem;
+    margin-top: 3rem;
+  }
+}
+
+@media only screen and (max-height: 700px) {
+  img {
+    display: none;
   }
   
+  .submitBtn {
+    margin: 0;
+  }
+
+  .container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .row input {
+    flex: 3;
+  }
+
+  .row {
+    margin-bottom: 0.7rem;
+  }
+
 }
